@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './Membership.css';
+import {useNavigate} from 'react-router-dom';
 
 function Membership() {
   const [termsAgreed, setTermsAgreed] = useState(false);
   const [privacyAgreed, setPrivacyAgreed] = useState(false);
   const [errorMessage, setErrorMessage] =  useState('');
+  const navigate = useNavigate();
 
   const handleTermsChange = () => {
     setTermsAgreed(!termsAgreed);
@@ -19,7 +21,7 @@ function Membership() {
       setErrorMessage("모든 약관에 동의해야 합니다.")
     } else {
       setErrorMessage('');
-      window.location.href = "\Ship" /*반려인 직종인 골라서 회원가입 하는 */
+      navigate('/Membership2') /*반려인 직종인 골라서 회원가입 하는 */
     }
   };
 
@@ -303,11 +305,18 @@ function Membership() {
 ② “츄르릅”과 이용자 간에 제기된 전자상거래 소송에는 한국법을 적용합니다.
                 </p>
               </div>
-              <label>
-                <input type="checkbox" checked={termsAgreed} onChange={handleTermsChange} />
-                이용약관에 동의합니다.
-              </label>
             </section>
+            <section className='checkbox-section'>
+              <input
+              type='checkbox'
+              id='terms'
+              checked={termsAgreed}
+              onChange={handleTermsChange}
+              />
+              <label htmlFor='terms'>이용약관에 동의합니다.</label>
+              <br/>
+            </section>
+
             <section className="privacy-section">
               <h2>개인정보취급방침</h2>
               <div className="privacy-box">
@@ -447,15 +456,20 @@ function Membership() {
                 (1) 공고일자 : 2024년 04월 01일
                 (2) 시행일자 : 2024년 10월 25일</p>
               </div>
-              <label>
-                <input type="checkbox" checked={privacyAgreed} onChange={handlePrivacyChange} />
-                개인정보 취급방침에 동의합니다.
-              </label>
+              </section>
+              <section>
+                <input 
+              type='checkbox'
+              id='privacy'
+              checked={privacyAgreed}
+              onChange={handlePrivacyChange}
+                />
+                <label htmlFor='privacy'>개인정보 처리방침에 동의합니다.</label>
+                <br/>
+                {errorMessage && <p className='error-message'>{errorMessage}</p>}
+                <button onClick={handleAgreeClick}>동의</button>
+                <button onClick={handleCancelClick}>취소</button>
             </section>
-            <div className="buttons">
-              <button className="agree-btn" onClick={handleAgreeClick} disabled={!termsAgreed || !privacyAgreed}>동의</button>
-              <button className="cancel-btn" onClick={handleCancelClick}>취소</button>
-            </div>
           </main>
         </div>
       </div>

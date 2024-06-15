@@ -1,7 +1,7 @@
 import React, { useState } from "react"; // useState를 React로부터 가져옵니다
-import './Ship.css';
+import './Membership2.css';
 
-function Ship() {
+function Membership2() {
     const [isPetOwner, setIsPetOwner] = useState(true);
     const [petOwnerData, setPetOwnerData] = useState({
         userId: '',
@@ -182,8 +182,22 @@ function Ship() {
                     )}
                 </section>
             </section>
+            <footer>
+        <div className="footer-contents">
+          <div className="footer-links">
+            <a href="#">개인정보처리방침</a>
+            <a href="#">이메일추출방지정책</a>
+          </div>
+          <div className="owner">
+            대표 : 신명진 <span className="pipe" /> 전화번호 : 031.xxx.xxxx
+          </div>
+          <div className="copyright">
+            © 2024 CHURURUP. All rights reserved.
+          </div>
+        </div>
+      </footer>
         </div>
     );
 }
 
-export default Ship;
+export default Membership2;
