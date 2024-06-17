@@ -5,7 +5,7 @@ function Login() {
   return (
     <div className="App">
       <header>
-        <a href="#" id="logo">
+        <a href="/Homepage" id="logo">
           <img alt="헤더 이미지" className="header-image" src="/CHRURUP.png" />
         </a>
         <nav>

@@ -18,21 +18,20 @@ function Membership() {
 
   const handleAgreeClick = () => {
     if (!termsAgreed || !privacyAgreed) {
-      setErrorMessage("모든 약관에 동의해야 합니다.")
+      window.alert("모든 약관에 동의해야 합니다.")
     } else {
-      setErrorMessage('');
       navigate('/Membership2') /*반려인 직종인 골라서 회원가입 하는 */
     }
   };
 
   const handleCancelClick = () => {
-    window.location.href = "/"; /*홈페이지 주소 넣기 */
+    if(window.confirm("취소하시겠습니까?")); /*홈페이지 주소 넣기 */
   };
 
   return (
     <div>
       <header>
-        <a href="#" id="logo">
+        <a href="/Homepage" id="logo">
           <img src="/CHRURUP.png" alt="헤더 이미지" className="header-image" />
         </a>
         <nav>

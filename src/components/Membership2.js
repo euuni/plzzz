@@ -60,19 +60,39 @@ function Membership2() {
     };
 
     return (
-        <div className="membership-container">
-            <header className="membership-header">
-                <h1>회원가입</h1>
+        <div>
+        <header>
+            <a href="/Homepage" id="logo">
+                <img src="/CHRURUP.png" alt="헤더 이미지" className="header-image" />"
+            </a>
+            <nav>
+                <a href="#">동물병원/ 매장</a>
+                <a href="#">질병 검색</a>
+                <a href="#">SNS</a>
+            </nav>
+            <div className="login-container">
+                <a href="/Login">로그인</a>
+                <a href="/Membership">회원가입</a>
+            </div>
             </header>
-            <section className="membership-content">
-                <div className="member-join">
-                    <h2>Member Join</h2>
-                    <div className="steps">
-                        <span>약관동의</span>
-                        <span className="active">정보입력</span>
-                        <span>가입완료</span>
-                    </div>
+            <div className="banner">
+        <img src="/dogbanner.png" alt="배너이미지" />
+        <h1>회원가입</h1>
+        <img src="/catbanner.png" alt="배너이미지" />
+            </div>
+            <div className="container">
+                <div className="member-join-box">
+                    <header>
+                        <h1>member join</h1>
+                        <p>회원가입하여 저희 홈페이지의 서비스를 이용하세요.</p>
+                        <div className="steps">
+                            <div className="step">Step 01<br/>약관동의</div>
+                            <div className="step-active">Step 02<br/>정보입력</div>
+                            <div className="step">Step 03<br/>가입완료</div>
+                        </div>
+                    </header>
                 </div>
+            </div>
                 <section className="form-section">
                     <h2>정보입력</h2>
                     <div className="form-tabs">
@@ -181,7 +201,7 @@ function Membership2() {
                         </form>
                     )}
                 </section>
-            </section>
+
             <footer>
         <div className="footer-contents">
           <div className="footer-links">
